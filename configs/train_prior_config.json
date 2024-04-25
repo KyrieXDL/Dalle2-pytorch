@@ -1,0 +1,53 @@
+{
+    "prior": {
+        "clip": {
+            "make": "openai",
+            "model": "ViT-L/14"
+        },
+        "net": {
+            "dim": 768,
+            "depth": 12,
+            "num_timesteps": 1000,
+            "max_text_len": 77,
+            "num_time_embeds": 1,
+            "num_image_embeds": 1,
+            "num_text_embeds": 1,
+            "dim_head": 64,
+            "heads": 12,
+            "ff_mult": 4,
+            "norm_out": true,
+            "attn_dropout": 0.05,
+            "ff_dropout": 0.05,
+            "final_proj": true,
+            "normformer": true,
+            "rotary_emb": true
+        },
+        "image_embed_dim": 768,
+        "image_size": 224,
+        "image_channels": 3,
+        "timesteps": 1000,
+        "sample_timesteps": 64,
+        "cond_drop_prob": 0.1,
+        "loss_type": "l2",
+        "predict_x_start": true,
+        "beta_schedule": "cosine",
+        "condition_on_text_encodings": true
+    },
+    "train": {
+        "epochs": 5,
+        "batch_size": 8,
+        "lr": 1.1e-4,
+        "wd": 6.02e-2,
+        "max_grad_norm": 0.5,
+        "use_ema": true,
+        "ema_beta": 0.9999,
+        "ema_update_after_step": 50,
+        "warmup_steps": 50,
+        "amp": false,
+        "save_every_seconds": 3600,
+        "eval_timesteps": [64, 1000],
+        "random_seed": 84513,
+        "train_img_path": "/home/admin02/projects/aigc/DALLE2-pytorch-main/data/coco/train2014",
+        "train_annot_path": "/home/admin02/projects/aigc/DALLE2-pytorch-main/data/coco/annotations_trainval2014/annotations/captions_train2014.json"
+    }
+}

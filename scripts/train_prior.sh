@@ -1,0 +1,1 @@
+accelerate launch --config_file ./configs/default_config.yaml train_diffusion_prior_new.py
