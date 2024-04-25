@@ -53,7 +53,7 @@ def main(args):
     decoder_kwargs.pop('clip')
     decoder_kwargs.pop('unets')
     decoder = Decoder(unet=(unet1, unet2), clip=clip, **decoder_kwargs).to(device)
-    decoder.load_state_dict(torch.load(args.decoder_config))
+    decoder.load_state_dict(torch.load(args.decoder_ckpt))
 
     dalle2 = DALLE2(
         prior=diffusion_prior,
